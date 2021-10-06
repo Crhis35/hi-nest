@@ -40,10 +40,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       host: process.env.DB_HOST,
       port: +process.env.DB_PORT,
       synchronize: process.env.NODE_ENV !== 'production',
-      url: process.env.DB_URL,
+      url: process.env.DATABASE_URL,
       autoLoadEntities: process.env.NODE_ENV !== 'production',
       extra: {
-        ssl: true,
+        ssl: {
+          rejectUnauthorized: false,
+        },
         encrypt: false,
       },
     }),
