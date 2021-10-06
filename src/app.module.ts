@@ -41,6 +41,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       synchronize: process.env.NODE_ENV !== 'prod',
       url: process.env.DB_URL,
       autoLoadEntities: process.env.NODE_ENV !== 'prod',
+      extra: {
+        ssl: true,
+      },
     }),
     InvoicesModule,
     ClientsModule,
