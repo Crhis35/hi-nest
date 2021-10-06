@@ -44,6 +44,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       autoLoadEntities: process.env.NODE_ENV !== 'production',
       extra: {
         ssl: true,
+        encrypt: false,
       },
     }),
     InvoicesModule,
